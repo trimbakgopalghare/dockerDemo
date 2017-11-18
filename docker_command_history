@@ -1,0 +1,389 @@
+    1  ls
+    2  docker search fedora
+    3  docker pull fedora
+    4  cd /var/lib/docker/
+    5  ls
+    6  cd image/
+    7  ls
+    8  cd aufs/
+    9  ls
+   10  cd ..
+   11  ls
+   12  cd ..
+   13  ls
+   14  cd aufs/
+   15  ls
+   16  cd 
+   17  docker run -i -t --name=f21 fedora /bin/bash
+   18  docker ps -a
+   19  docker ps 
+   20  docker ps -a
+   21  docker run ubuntu:14.04 /bin/echo 'Hello world'
+   22  docker run -d ubuntu:14.04 /bin/sh -c "while true; do echo hello world; sleep 1; done"
+   23  docker ps -a
+   24  docker exec -it 80bc4fe450c6 /bin/bash 
+   25  docker ps -a
+   26  docker log 80bc4fe450c6
+   27  docker logs 80bc4fe450c6
+   28  docker logs 80bc4fe450c6 | wc -l
+   29  docker ps -a
+   30  docker rm $(docker ps -aq --filter "status=exited")
+   31  docker ps -a
+   32  docker run -i -t fedora /bin/bash
+   33  docker ps -a
+   34  docker rm $(docker ps -aq --filter "status=exited")
+   35  docker run -i -t fedora /bin/bash
+   36  ls
+   37  docker ps -a
+   38  ls
+   39  docker images
+   40  pwd
+   41  touch file
+   42  ls
+   43  docker ps -a
+   44  docker commit -a "Trimbak Gopalghare" -m "Fedora with HTPD package and file" 64361dc4c856  mk/fedora2:httpd
+   45  docker images
+   46  docker run -it af091c21291c 
+   47  docker images
+   48  docker run -it af091c21291c
+   49  pwd
+   50  cd /opt/
+   51  ls
+   52  vim init.sh
+   53  chmod +x init.sh 
+   54  ./init.sh 
+   55  docker info
+   56  docker --version
+   57  vim init.sh 
+   58  uname -a
+   59  docker info
+   60  docker search TERM
+   61  docker search python
+   62  ls
+   63  cd /
+   64  ls
+   65  cd /opt/
+   66  ls
+   67  cd ..
+   68  ls
+   69  docker images
+   70  ls
+   71  docker --help
+   72  cd /opt/
+   73  ls
+   74  mkdir -p dockerdemo
+   75  cd dockerdemo/
+   76  ls
+   77  mkdir pythonapp
+   78  ls
+   79  cd pythonapp/
+   80  ls
+   81  vim Dockerfile
+   82  ls
+   83  vim Dockerfile 
+   84  vim app.py
+   85  vim from flask import Flask
+   86  vim requirements.txt
+   87  ls
+   88  vim app.py 
+   89  ls
+   90  ll
+   91  vim app.py 
+   92  docker build . -t pythondemo:latest
+   93  docker images
+   94  #docker run -it af091c21291c
+   95  telnet localhost 5000
+   96  netstat -lntp
+   97  docker run -it de95be7d6fca
+   98  docker run --name test_python -d de95be7d6fca
+   99  docker exec -it de95be7d6fca /bin/bash
+  100  docker ps -a
+  101  docker exec -it 5cdeed950c05 /bin/bash
+  102  ls
+  103  docker ps -a
+  104  docker exec -it 5cdeed950c05 /bin/bash
+  105  ls
+  106  cd ..
+  107  ls
+  108  mkdir nginxdemo
+  109  cd nginxdemo/
+  110  ls
+  111  vim Dockerfile
+  112  ls
+  113  vim Dockerfile
+  114  cd ..
+  115  ls
+  116  cd pythonapp/
+  117  ls
+  118  cd ..
+  119  ls
+  120  cd nginxdemo/
+  121  ls
+  122  docker build . -t  nginxdemo:01 
+  123  docker ps -a
+  124  docker images
+  125  docker run --name nginx-text -d 1bc88c11c57b
+  126  docker ps -a
+  127  docker exec -it 0b0e1a6a1a9f /bin/bash
+  128  ifconfig
+  129  docker ps -a
+  130  docker images
+  131  docker run python_test -d de95be7d6fca
+  132  docker run --name python_test -d de95be7d6fca
+  133  docker run --name nginx_test -d 1bc88c11c57b
+  134  docker ps -a
+  135  docker rm $(docker ps -aq --filter "status=exited")
+  136  docker ps -a
+  137  vim cmd.txt
+  138  vi cmd.txt 
+  139  docker ps -a
+  140  curl localhost:5000
+  141  docker exec -it de95be7d6fca /bin/bash
+  142  docker ps -a
+  143  docker exec -it 033950cd44e0 /bin/bash
+  144  docker exec -it c04db3cd1cad /bin/bash
+  145  cd /opt/dockerdemo/nginxdemo/
+  146  ls
+  147  vim Dockerfile 
+  148  docker exec -it 033950cd44e0 /bin/bash
+  149  docker exec -it c04db3cd1cad /bin/bash
+  150  docker ps -a
+  151  netstat -lnc grep 5000
+  152  netstat -anc | grep 5000
+  153  netstat -lntp | grep 5000
+  154  docker ps -a
+  155  docker 
+  156  docker ps -a
+  157  docker stop 
+  158  docker ps -a
+  159  #docker run --name nginx_demo -p5000:80 -d 1bc88c11c57b
+  160  docker images
+  161  docker run --name nginx_demo -p5000:80 -d 1bc88c11c57b
+  162  docker ps -a
+  163  docker rm $(docker ps -aq --filter "status=exited")
+  164  docker ps -a
+  165  docker network ls
+  166  docker network inspect 36f983b911ed
+  167  docker network inspect 36f983b911edroot@ip-172-31-4-57:/opt/dockerdemo/nginxdemo# docker network inspect 36f983b911ed
+  168  vim ~/cmd.txt 
+  169  brctl show
+  170  sudo apt-get install bridge-utils
+  171  brctl show
+  172  docker ps -a
+  173  ls
+  174  cd /tmp/
+  175  ls
+  176  docker create -v /tmp --name datacontainer ubuntu
+  177  docker run -t -i --volumes-from datacontainer ubuntu /bin/bash
+  178  mkdir ~/nginxlogs
+  179  cd ~/nginxlogs/
+  180  ls
+  181  pwd
+  182  ls
+  183  #docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
+  184  docker ps -a
+  185  docker rm $(docker ps -aq --filter "status=exited")
+  186  docker ps -a
+  187  docker stop b40bf000365b
+  188  docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
+  189  docker ps -a
+  190  docker rm $(docker ps -aq --filter "status=exited")
+  191  #docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
+  192  docker images
+  193  #docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginxdemo
+  194  docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginxdemo
+  195  docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
+  196  ls
+  197  tail -f access.log 
+  198  tail -f error.log 
+  199  tail -f access.log 
+  200  ll
+  201  docker run -d -v ~/nginxlogs:/var/log/nginx -p 8000:80 -i nginxdemo
+  202  docker images
+  203  docker run -d -v ~/nginxlogs:/var/log/nginx -p 8000:80 -i nginxdemo:01
+  204  ls
+  205  tail -f access.log 
+  206  docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+  207  docker run --name test-wordpress -p 9200:80 --link test-mysql:mysql -d wordpress
+  208  docker images
+  209  docker ps -a
+  210  docker stop f5c86f2c019a
+  211  docker stop 95d5ea11f856
+  212  docker stop 033950cd44e0
+  213  docker ps -a
+  214  docker stop 4108744b0cf9
+  215  docker stop 033950cd44e0
+  216  docker rm $(docker ps -aq --filter "status=exited")
+  217  docker ps -a
+  218  cd /opt/dockerdemo/
+  219  ls
+  220  git clone https://github.com/maheshkharwadkar/example-voting-app
+  221  ls
+  222  cd example-voting-app/
+  223  ls
+  224  pwd
+  225  docker ps -a
+  226  docker stop $(docker ps)
+  227  docker ps -a
+  228  docker rm $(docker ps -aq --filter "status=exited")
+  229  docker ps -a
+  230  docker stop 4108744b0cf9
+  231  ls
+  232  docker ps -a
+  233  docker stop $(docker ps -aq)
+  234  docker rm $(docker ps -aq --filter "status=exited")
+  235  docker stop
+  236  docker ps -a
+  237  docker stop $(docker ps -aq --filter "status=created")
+  238  docker ps -a
+  239  docker stop 4108744b0cf9
+  240  docker ps -a
+  241  docker rm $(docker ps -aq --filter "status=created")
+  242  docker ps -a
+  243  docker ps
+  244  docker volume ls
+  245  ls
+  246  cd ..
+  247  ls
+  248  curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose''
+  249  ls
+  250  cd example-voting-app/
+  251  ls
+  252  cd ..
+  253  ls
+  254  cd example-voting-app/
+  255  ls
+  256  curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose''
+  257  ls
+  258  docker-compose -v
+  259  sudo docker-compose -v
+  260  docker-compose -v
+  261  ll /usr/local/bin/docker-compose
+  262  sudo chmod +x /usr/local/bin/docker-compose
+  263  docker-compose -v
+  264  ls -la
+  265  vim voting-app/Dockerfile 
+  266  docker-compose build
+  267  docker images
+  268  docker ps 
+  269  docker ps -a
+  270  docker images
+  271  ls
+  272  docker-compose up -d
+  273  docker ps
+  274  ls
+  275  hostname -i
+  276  docker swarm init --advertise-addr 172.31.4.57
+  277  Swarm initialized: current node (mqjyq176ilvbszk59mp2a6eyo) is now a manager.
+  278  To add a worker to this swarm, run the following command:
+  279  To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+  280  ls
+  281  docker node
+  282  docker node ls
+  283  ls
+  284  vim cmd.txt 
+  285  docker node ls
+  286  docker service create --name web -p 80:80/tcp nginx
+  287  docker ps
+  288  docker service ls
+  289  docker ps ls
+  290  docker ps -a
+  291  docker rm $(docker ps -aq --filter "status=Exited")
+  292  docker ps
+  293  docker service ps web
+  294  docker service ps 
+  295  curl localhost 80
+  296  ls
+  297  docker service ps 
+  298  docker service ls
+  299  curl localhost 80
+  300  curl localhost:80
+  301  ls
+  302  docker service create --name=viz --publish=8080:8080/tcp --constraint=node.role==manager --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock dockersamples/visualizer
+  303  docker service ls
+  304  curl localhost:8080
+  305  docker service ps viz
+  306  docker service ls
+  307  docker service rm web
+  308  docker service ls
+  309  docker service create --replicas 1 --name helloworld --publish 80:8000 jwilder/whoami
+  310  docker service ps helloworld
+  311  curl localhost
+  312  curl 127.0.0.1
+  313  netstat -lntp
+  314  docker ps
+  315  docker docker service
+  316  docker service
+  317  docker service ls
+  318  docker exec -it  a253obs9i16s /bin/bash
+  319  docker ps
+  320  history
+  321  docker search fedora
+  322  cd /opt/
+  323  ls
+  324  cd dockerdemo/
+  325  ls
+  326  cd ..
+  327  ls
+  328  cat init.sh 
+  329  ls
+  330  yum install git
+  331  apt-get install git
+  332  git status
+  333  ls
+  334  cd dockerdemo/
+  335  ls
+  336  git init
+  337  ls
+  338  ls -la
+  339  git add 
+  340  ls
+  341  git add *
+  342  ls
+  343  git commit -m "added docker demo to git repo"
+  344  git remote add origin https://github.com/trimbakgopalghare/dockerDemo.git
+  345  git push -u origin master
+  346  ls
+  347  cd ..
+  348  ls
+  349  git init
+  350  ls -la
+  351  ls
+  352  git add init.sh 
+  353  git commit init.sh -m "intsallation of docker file "
+  354  git remote add origin https://github.com/trimbakgopalghare/dockerDemo.git
+  355  git push -u origin master
+  356  git pull
+  357  git pull ls
+  358  ls
+  359  mkdir dockeronline
+  360  cd dockeronline/
+  361  ls
+  362  git clone https://github.com/trimbakgopalghare/dockerDemo.git
+  363  ls
+  364  cd dockerDemo/
+  365  ls
+  366  cp ../../init.sh  .
+  367  ls
+  368  git status
+  369  git add init
+  370  git add init.sh 
+  371  git commit -m "added new init file"
+  372  git status
+  373  git push
+  374  cd ..
+  375  ls
+  376  cd ..
+  377  ls
+  378  cd dockerdemo/
+  379  ls
+  380  history
+  381  ls
+  382  cd ..3
+  383  cd ..
+  384  ls
+  385  cd dockeronline/
+  386  ls
+  387  cd dockerDemo/
+  388  ls
+  389  history > docker_command_history
